@@ -6,6 +6,12 @@ endif
 
 syntax enable
 
+# インデント関連の設定
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set autoindent
+
 # 行番号を表示する
 set number
 
