@@ -215,4 +215,3 @@ call plug#end()
 
 #set runtimepath^=/home/sh/coc-typeprof
 
-command! -nargs=* ClaudeCode :terminal claude <args>
