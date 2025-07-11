@@ -103,6 +103,8 @@ nmap <silent> <space>rn <Plug>(coc-rename)
 nmap <silent> <space>dt <Plug>(coc-type-definition)
 #coc.nvim(Format) ' fmt'で実行
 nmap <silent> <space>fmt <Plug>(coc-format)
+#coc.nvimで(Hover) ' dh'で実行
+nnoremap <silent> <space>dh :call CocActionAsync('doHover')<CR>
 
 # vim-fugitive
 Plug 'tpope/vim-fugitive'
