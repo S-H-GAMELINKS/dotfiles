@@ -186,6 +186,7 @@ Plug 'tpope/vim-commentary'
 
 # TypeProf LSP for coc.nvim
 Plug 'S-H-GAMELINKS/coc-typeprof'
+#set runtimepath^=/home/sh/coc-typeprof
 
 # vim-test
 Plug 'vim-test/vim-test'
@@ -214,6 +215,3 @@ set sessionoptions-=buffers
 g:obsession_no_buffers = 1
 
 call plug#end()
-
-#set runtimepath^=/home/sh/coc-typeprof
-
