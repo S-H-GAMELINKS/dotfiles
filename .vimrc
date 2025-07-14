@@ -116,27 +116,23 @@ Plug 'rbong/vim-flog'
 # memolist.vim
 Plug 'glidenote/memolist.vim'
 
-# autosuggest.vim
-Plug 'girishji/autosuggest.vim'
+# vimsuggest
+Plug 'girishji/vimsuggest'
 
-var options = {
-    search: {
-        enable: true,   # 'false' will disable search completion
-        pum: true,      # 'false' for flat menu, 'true' for stacked menu
-        maxheight: 12,  # max height of stacked menu in lines
-        fuzzy: true,    # fuzzy completion
-        alwayson: true, # when 'false' press <tab> to open popup menu
-    },
-    cmd: {
-        enable: true,   # 'false' will disable command completion
-        pum: true,      # 'false' for flat menu, 'true' for stacked menu
-        fuzzy: true,    # fuzzy completion
-        exclude: ['\c^Git', '\c^G$'],    # patterns to exclude from command completion (use \c for ignorecase)
-        onspace: [],    # show popup menu when cursor is in front of space (ex. :buffer<space>)
-    }
+var vim_suggest = {}
+vim_suggest.cmd = {
+  'enable': v:true,
+  'pum': v:true,
+  'exclude': [],
+  'onspace': ['b\%[uffer]', 'colo\%[rscheme]'],
+  'alwayson': v:true,
+  'popupattrs': {},
+  'wildignore': v:true,
+  'addons': v:true,
+  'trigger': 't',
+  'reverse': v:false,
+  'prefixlen': 1,
 }
-
-autocmd VimEnter * g:AutoSuggestSetup(options)
 
 # Fern
 Plug 'lambdalisue/fern.vim'
