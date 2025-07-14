@@ -131,7 +131,7 @@ var options = {
         enable: true,   # 'false' will disable command completion
         pum: true,      # 'false' for flat menu, 'true' for stacked menu
         fuzzy: true,    # fuzzy completion
-        exclude: [],    # patterns to exclude from command completion (use \c for ignorecase)
+        exclude: ['\c^Git', '\c^G$'],    # patterns to exclude from command completion (use \c for ignorecase)
         onspace: [],    # show popup menu when cursor is in front of space (ex. :buffer<space>)
     }
 }
@@ -140,12 +140,6 @@ autocmd VimEnter * g:AutoSuggestSetup(options)
 
 # Fern
 Plug 'lambdalisue/fern.vim'
-
-def OnVimEnter()
-  timer_start(10, (_) => execute('Fern . -drawer -reveal=%'))
-enddef
-
-autocmd VimEnter * OnVimEnter()
 
 g:fern#default_hidden = 1
 
@@ -205,14 +199,5 @@ g:localvimrc_name = ['.lvimrc']
 g:localvimrc_ask = 1
 g:localvimrc_sandbox = 1
 g:localvimrc_whitelist = [expand('~/rubydev/ruby/.lvimrc')]
-
-# vim-obsession
-Plug 'tpope/vim-obsession'
-
-# NOTE:
-# vim-fernでのファイラーがセッション復元時にエラーになるためBufferをセッションに保存しない
-# メモなどは別途memolist.vimに残すこと
-set sessionoptions-=buffers
-g:obsession_no_buffers = 1
 
 call plug#end()
