@@ -76,6 +76,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 g:airline_theme = 'raven'
+g:airline#extensions#searchcount#enabled = 0
 
 # mru.vim
 Plug 'yegappan/mru'
