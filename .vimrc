@@ -21,6 +21,9 @@ set shell=/usr/bin/bash
 # カーソルの色を変更
 set cursorline
 
+# Vimのあいまい検索を有効化
+set wildoptions+=fuzzy
+
 # 検索時に最後まで検索すると最初のマッチするものに戻る
 set wrapscan
 
@@ -120,6 +123,7 @@ Plug 'glidenote/memolist.vim'
 Plug 'girishji/vimsuggest'
 
 var vim_suggest = {}
+
 vim_suggest.cmd = {
   'enable': v:true,
   'pum': v:true,
@@ -132,6 +136,13 @@ vim_suggest.cmd = {
   'trigger': 't',
   'reverse': v:false,
   'prefixlen': 1,
+}
+
+vim_suggest.search = {
+  'enable': v:true,
+  'fuzzy': v:true,
+  'pum': v:true,
+  'alwayson': v:true,
 }
 
 # Fern
