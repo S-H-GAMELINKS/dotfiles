@@ -109,6 +109,10 @@ nmap <silent> <space>dt <Plug>(coc-type-definition)
 nmap <silent> <space>fmt <Plug>(coc-format)
 #coc.nvimで(Hover) ' dh'で実行
 nnoremap <silent> <space>dh :call CocActionAsync('doHover')<CR>
+#coc.nvimでLSPの指摘箇所に遷移 ' dn'
+nmap <silent> <space>dn <Plug>(coc-diagnostic-next)
+#coc.nvimで前の指摘箇所に遷移 ' dp'で実行
+nmap <silent> <space>dp <Plug>(coc-diagnostic-prev)
 
 # vim-fugitive
 Plug 'tpope/vim-fugitive'
@@ -189,6 +193,10 @@ Plug 'tpope/vim-commentary'
 # TypeProf LSP for coc.nvim
 Plug 'S-H-GAMELINKS/coc-typeprof'
 #set runtimepath^=/home/sh/coc-typeprof
+
+# Kanayago LSP for coc.nvim
+Plug 'S-H-GAMELINKS/coc-kanayago'
+#set runtimepath^=/home/sh/oss/kanayago_dev/coc-kanayago
 
 # vim-test
 Plug 'vim-test/vim-test'
