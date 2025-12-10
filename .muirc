@@ -1,0 +1,13 @@
+# カラースキームの設定
+Mui.set :colorscheme, "mui"
+
+# シンタックスハイライトの有効化
+Mui.set :syntax, true
+
+# インデント設定
+Mui.set :shiftwidth, 2
+Mui.set :expandtab, true
+Mui.set :tabstop, 8
+
+# Visual モードでインデント後に選択を維持
+Mui.set :reselect_after_indent, true
