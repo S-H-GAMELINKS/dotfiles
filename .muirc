@@ -11,3 +11,18 @@ Mui.set :tabstop, 8
 
 # Visual モードでインデント後に選択を維持
 Mui.set :reselect_after_indent, true
+
+# Gitプラグイン
+Mui.use "mui-git"
+
+# fzfプラグイン
+Mui.use "mui-fzf"
+
+# LSPプラグイン
+
+Mui.use "mui-lsp", "0.2.0"
+
+Mui.lsp do
+  #use :ruby_lsp
+  #use :kanayago
+end
