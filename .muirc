@@ -13,16 +13,39 @@ Mui.set :tabstop, 8
 Mui.set :reselect_after_indent, true
 
 # Gitプラグイン
-Mui.use "mui-git"
+Mui.use "mui-git", "0.2.0"
 
 # fzfプラグイン
 Mui.use "mui-fzf"
 
 # LSPプラグイン
-
 Mui.use "mui-lsp", "0.2.0"
 
 Mui.lsp do
-  #use :ruby_lsp
-  #use :kanayago
+  #server name: "kanayago", command: "kanayago --lsp", language_ids: ["ruby"], file_patterns: ["**/*.rb"]
+end
+
+Mui.use "igata"
+
+Mui.command :igata do |ctx|
+  file_path = ctx.buffer.name
+  ctx.set_message("Generate test code with #{file_path}")
+
+  source = File.read(file_path)
+
+  igata = Igata.new(source)
+
+  ctx.open_scratch_buffer("[Igata generated test code]", igata.generate)
+end
+
+Mui.keymap :normal, "<Leader>rg" do |ctx|
+  ctx.run_command :Rg
+end
+
+Mui.keymap :normal, "<Tab>" do |ctx|
+  ctx.editor.tab_manager.next_tab
+end
+
+Mui.keymap :normal, "<S-Tab>" do |ctx|
+  ctx.editor.tab_manager.prev_tab
 end
