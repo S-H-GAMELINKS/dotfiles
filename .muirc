@@ -12,6 +12,12 @@ Mui.set :tabstop, 8
 # Visual モードでインデント後に選択を維持
 Mui.set :reselect_after_indent, true
 
+# YJITを有効化
+Mui.set :use_yjit, true
+
+# Yankなどでクリップボードに値を保持
+Mui.set :clipboard, :unnamed
+
 # Gitプラグイン
 Mui.use "mui-git", "0.2.0"
 
@@ -46,6 +52,14 @@ Mui.keymap :normal, "<Tab>" do |ctx|
   ctx.editor.tab_manager.next_tab
 end
 
+Mui.keymap :normal, "5" do |ctx|
+  ctx.editor.tab_manager.next_tab
+end
+
 Mui.keymap :normal, "<S-Tab>" do |ctx|
+  ctx.editor.tab_manager.prev_tab
+end
+
+Mui.keymap :normal, "4" do |ctx|
   ctx.editor.tab_manager.prev_tab
 end
